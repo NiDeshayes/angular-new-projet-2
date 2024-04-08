@@ -1,0 +1,27 @@
+.footer {
+    background-color: #151217; 
+    color: #fff; 
+    padding: 10px 20px; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+}
+
+.social-links {
+    display: flex; 
+}
+
+.social-links a {
+    margin: 0 10px; 
+    text-decoration: none;
+}
+
+.social-links img {
+    width: 30px; 
+    height: 30px;
+    transition: transform 0.3s ease; 
+}
+
+.social-links img:hover {
+    transform: scale(1.2); 
+}

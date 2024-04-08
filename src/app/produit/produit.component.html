@@ -1,0 +1,16 @@
+<div class="gallery">
+  <h2>{{ selectedImage.title }}</h2>
+  <div class="carousel">
+    <div *ngFor="let image of images" class="slide" [class.active]="image === selectedImage">
+      <img [src]="image.src" alt="{{ image.alt }}">
+      <div class="details">
+        <p>{{ image.description }}</p>
+        <p>Prix: {{ image.price }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="controls">
+    <button (click)="prevImage()">Précédent</button>
+    <button (click)="nextImage()">Suivant</button>
+  </div>
+</div>

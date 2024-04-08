@@ -1,0 +1,36 @@
+<div class="container page-background">
+    <section class="presentation">
+        <h1>Au Petit village</h1>
+        <p>Votre client se lance dans la vente de figurines faites main, inspirées d’Astérix & Obélix ! Il fait appel à vous pour créer son site web avec la technologie Angular, en respectant sa charte graphique.</p>
+    </section>
+
+    <div class="catalogue">
+        <h2>Catalogue des Produits</h2>
+
+        <div class="tri">
+            <button (click)="trierParPrixCroissant()">Trier par prix croissant</button>
+            <button (click)="trierParPrixDecroissant()">Trier par prix décroissant</button>
+        </div>
+
+        <input type="text" [(ngModel)]="searchTerm" placeholder="Rechercher par nom">
+
+        <div *ngFor="let produit of produitsFiltres">
+            <div class="produit">
+                <a [routerLink]="['/produit', produit.nom]">
+                    <img [src]="produit.image" alt="{{ produit.nom }}" class="produit-image">
+                </a>
+                <div class="details">
+                    <h3>{{ produit.nom }}</h3>
+                    <p>{{ produit.description }}</p>
+                </div>
+                <div class="prix">
+                    <p>{{ produit.prix }}</p>
+                </div>
+            </div>
+        </div>
+
+        <div *ngIf="produitsFiltres.length === 0" class="no-results">
+            Aucun résultat trouvé.
+        </div>
+    </div>
+</div>

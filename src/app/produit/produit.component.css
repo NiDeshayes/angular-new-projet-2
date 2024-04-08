@@ -1,0 +1,39 @@
+.gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+  }
+  
+  .carousel {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .slide {
+    display: none;
+  }
+  
+  .slide.active {
+    display: block;
+  }
+  
+  .slide img {
+    max-width: 100%; 
+    height: auto;
+  }
+  
+  .details {
+    padding: 10px;
+  }
+  
+  .controls {
+    margin-top: 20px;
+  }
+
+  .slide img {
+    width: 300px; 
+    height: auto; 
+  }
