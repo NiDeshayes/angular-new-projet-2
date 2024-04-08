@@ -1,5 +1,5 @@
-// produit.component.ts
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 interface Image {
   src: string;
@@ -23,6 +23,21 @@ export class ProduitComponent {
   ];
 
   selectedImageIndex: number = 0;
+
+  constructor(private route: ActivatedRoute) {
+    this.route.params.subscribe(params => {
+      
+      const nom = params['nom'];
+
+      
+      const image = this.images.find(img => img.title === nom);
+
+      
+      if (image) {
+        this.selectedImageIndex = this.images.indexOf(image);
+      }
+    });
+  }
 
   get selectedImage(): Image {
     return this.images[this.selectedImageIndex];

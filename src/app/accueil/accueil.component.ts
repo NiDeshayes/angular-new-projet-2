@@ -1,5 +1,5 @@
-
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 interface Produit {
   nom: string;
@@ -19,10 +19,11 @@ export class AccueilComponent {
     { nom: 'Idefix', description: 'petit figurine reprensant Idefix', prix: 20, image: '../../assets/Idefix2.jpg' },
     { nom: 'Panoramix', description: 'Panoramix', prix: 15, image: '../../assets/Panoramix.jpg' },
     { nom: 'Asterix', description: 'Asterix qui réflechis', prix: 24, image: '../../assets/Asterix.jpg' },
-   
   ];
 
   searchTerm: string = '';
+
+  constructor(private router: Router) {}
 
   trierParPrixCroissant(): void {
     this.produits.sort((a, b) => a.prix - b.prix);
@@ -36,5 +37,9 @@ export class AccueilComponent {
     return this.produits.filter(produit =>
       produit.nom.toLowerCase().includes(this.searchTerm.toLowerCase())
     );
+  }
+
+  voirProduit(nom: string): void {
+    this.router.navigate(['/produit', nom]);
   }
 }

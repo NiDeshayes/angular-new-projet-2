@@ -8,6 +8,9 @@ const routes: Routes = [
   { path: '', component: AccueilComponent }, 
   { path: 'produits', component: ProduitComponent },
   { path: 'a-propos', component: PageAProposComponent },
+  { path: '', redirectTo: '/accueil', pathMatch: 'full' },
+  { path: 'accueil', component: AccueilComponent },
+  { path: 'produit/:nom', component: ProduitComponent } 
 ];
 
 @NgModule({

@@ -18,6 +18,8 @@ header {
     width: 50px; 
     height: auto; 
     margin-right: 10px;
+    border-radius: 30px; 
+    
   }
   
   nav ul {
